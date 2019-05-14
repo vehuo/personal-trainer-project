@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import Moment from "react-moment";
+import Button from "@material-ui/core/Button";
 
 class Trainings extends Component {
   constructor(props) {
@@ -10,11 +11,24 @@ class Trainings extends Component {
   }
 
   componentDidMount() {
+    this.loadTrainings();
+  }
+
+  loadTrainings = () => {
     fetch("http://customerrest.herokuapp.com/gettrainings")
       .then(response => response.json())
       .then(jsondata => this.setState({ trainings: jsondata }))
       .catch(err => console.error(err));
-  }
+  };
+
+  deleteTraining = value => {
+    fetch("https://customerrest.herokuapp.com/api/trainings/" + value, {
+      method: "DELETE"
+    })
+      .then(this.loadTrainings())
+      .then(res => this.setState({ open: true, message: "Training deleted" }))
+      .catch(err => console.error(err));
+  };
 
   render() {
     const columns = [
@@ -27,7 +41,19 @@ class Trainings extends Component {
       },
       { Header: "Duration in minutes", accessor: "duration" },
       { Header: "Activity", accessor: "activity" },
-      { Header: "Customer ID", accessor: "customer.id" }
+      { Header: "Customer ID", accessor: "customer.id" },
+      {
+        Header: "",
+        filterable: false,
+        sortable: false,
+        width: 100,
+        accessor: "id",
+        Cell: ({ value }) => (
+          <Button color="primary" onClick={() => this.deleteTraining(value)}>
+            Delete
+          </Button>
+        )
+      }
     ];
 
     return (

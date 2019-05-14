@@ -110,7 +110,7 @@ class Customers extends Component {
         accessor: "links[0].href",
         filterable: false,
         sortable: false,
-        width: 100,
+        width: 125,
         Cell: ({ value, row }) => (
           <AddTraining
             addTraining={this.addTraining}
