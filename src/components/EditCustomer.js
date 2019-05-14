@@ -139,7 +139,7 @@ class EditCustomer extends Component {
             </Button>
           </DialogActions>
         </Dialog>
-        <Button color="primary" onClick={this.handleClickOpen}>
+        <Button onClick={this.handleClickOpen} color="primary">
           EDIT
         </Button>
       </div>
