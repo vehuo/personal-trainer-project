@@ -22,12 +22,14 @@ class Trainings extends Component {
   };
 
   deleteTraining = value => {
-    fetch("https://customerrest.herokuapp.com/api/trainings/" + value, {
-      method: "DELETE"
-    })
-      .then(this.loadTrainings())
-      .then(res => this.setState({ open: true, message: "Training deleted" }))
-      .catch(err => console.error(err));
+    if (window.confirm("Are you sure?")) {
+      fetch("https://customerrest.herokuapp.com/api/trainings/" + value, {
+        method: "DELETE"
+      })
+        .then(res => this.setState({ open: true, message: "Training deleted" }))
+        .then(this.loadTrainings())
+        .catch(err => console.error(err));
+    }
   };
 
   render() {

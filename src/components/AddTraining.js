@@ -4,7 +4,6 @@ import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
 class AddTraining extends Component {
@@ -58,9 +57,6 @@ class AddTraining extends Component {
         >
           <DialogTitle id="form-dialog-title">Add Training</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              Add a new training to the customer
-            </DialogContentText>
             <TextField
               onChange={this.handleChange}
               autoFocus

@@ -4,7 +4,6 @@ import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
 class EditCustomer extends Component {
@@ -67,11 +66,8 @@ class EditCustomer extends Component {
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">Add Customer</DialogTitle>
+          <DialogTitle id="form-dialog-title">Edit Customer</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              Add a new customer to the list
-            </DialogContentText>
             <TextField
               onChange={this.handleChange}
               autoFocus
