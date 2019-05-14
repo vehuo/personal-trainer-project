@@ -45,7 +45,7 @@ class EditCustomer extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  updateCar = () => {
+  updateCustomer = () => {
     const newCustomer = {
       firstname: this.state.firstname,
       lastname: this.state.lastname,
@@ -134,7 +134,7 @@ class EditCustomer extends Component {
             <Button onClick={this.handleClose} color="primary">
               Cancel
             </Button>
-            <Button onClick={this.updateCar} color="primary">
+            <Button onClick={this.updateCustomer} color="primary">
               Edit Customer
             </Button>
           </DialogActions>

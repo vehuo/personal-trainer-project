@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import AddCustomer from "./AddCustomer";
 import Snackbar from "@material-ui/core/Snackbar";
 import EditCustomer from "./EditCustomer";
+import AddTraining from "./AddTraining";
 
 class Customers extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class Customers extends Component {
     }
   };
 
-  saveCustomer = customer => {
+  addCustomer = customer => {
     fetch("https://customerrest.herokuapp.com/api/customers", {
       method: "POST",
       headers: {
@@ -55,6 +56,18 @@ class Customers extends Component {
     })
       .then(res => this.loadCustomers())
       .then(res => this.setState({ open: true, message: "Customer edited" }))
+      .catch(err => console.error(err));
+  };
+
+  addTraining = training => {
+    fetch("https://customerrest.herokuapp.com/api/trainings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(training)
+    })
+      .then(res => this.setState({ open: true, message: "New training added" }))
       .catch(err => console.error(err));
   };
 
@@ -98,6 +111,20 @@ class Customers extends Component {
         filterable: false,
         sortable: false,
         width: 100,
+        Cell: ({ value, row }) => (
+          <AddTraining
+            addTraining={this.addTraining}
+            link={value}
+            customer={row}
+          />
+        )
+      },
+      {
+        Header: "",
+        accessor: "links[0].href",
+        filterable: false,
+        sortable: false,
+        width: 100,
         Cell: value => (
           <Button color="primary" onClick={() => this.deleteCustomer(value)}>
             Delete
@@ -108,7 +135,7 @@ class Customers extends Component {
 
     return (
       <div>
-        <AddCustomer saveCustomer={this.saveCustomer} />
+        <AddCustomer addCustomer={this.addCustomer} />
         <ReactTable
           data={this.state.customers}
           columns={columns}
