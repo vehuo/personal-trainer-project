@@ -43,7 +43,7 @@ class AddCustomer extends Component {
       email: this.state.email,
       phone: this.state.phone
     };
-    this.props.saveCustomer(newCustomer);
+    this.props.addCustomer(newCustomer);
     this.handleClose();
   };
 

@@ -35,10 +35,10 @@ class Trainings extends Component {
   render() {
     const columns = [
       {
-        Header: "Date",
+        Header: "Date and time",
         accessor: "date",
         Cell: row => {
-          return <Moment format="DD.MM.YYYY">{row.value}</Moment>;
+          return <Moment format="DD.MM.YYYY - HH:MM">{row.value}</Moment>;
         }
       },
       { Header: "Duration in minutes", accessor: "duration" },

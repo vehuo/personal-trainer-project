@@ -5,6 +5,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import Moment from "react-moment";
 
 class AddTraining extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class AddTraining extends Component {
 
   addTraining = () => {
     const newTraining = {
-      date: this.state.date,
+      date: new Date(this.state.date),
       duration: this.state.duration,
       activity: this.state.activity,
       customer: this.state.customer
@@ -64,7 +65,7 @@ class AddTraining extends Component {
               value={this.state.date}
               name="date"
               label="Date"
-              type="date"
+              type="datetime-local"
               fullWidth
             />
             <TextField
