@@ -16,13 +16,13 @@ class App extends Component {
             <Navigator />
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/calendar" component={ShowCalendar} />
               <Route path="/customers" component={Customers} />
               <Route path="/trainings" component={Trainings} />
               <Route render={() => <h1>Page not found</h1>} />
             </Switch>
           </div>
         </BrowserRouter>
-        <ShowCalendar />
       </div>
     );
   }
