@@ -5,7 +5,6 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import Moment from "react-moment";
 
 class AddTraining extends Component {
   constructor(props) {
@@ -95,15 +94,25 @@ class AddTraining extends Component {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={this.handleClose} variant="contained" size="small">
               Cancel
             </Button>
-            <Button onClick={this.addTraining} color="primary">
+            <Button
+              onClick={this.addTraining}
+              variant="contained"
+              size="small"
+              color="primary"
+            >
               Add training
             </Button>
           </DialogActions>
         </Dialog>
-        <Button onClick={this.handleClickOpen} color="primary">
+        <Button
+          onClick={this.handleClickOpen}
+          variant="contained"
+          size="small"
+          color="primary"
+        >
           ADD TRAINING
         </Button>
       </div>

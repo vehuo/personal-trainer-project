@@ -58,7 +58,7 @@ class ShowCalendar extends Component {
             startAccessor="start"
             endAccessor="end"
             views={["month", "week", "day"]}
-            style={{ height: 600, width: this.state.width }}
+            style={{ height: 600, width: this.state.width, padding: 20 }}
           />
         </div>
       </div>

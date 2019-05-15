@@ -127,15 +127,25 @@ class EditCustomer extends Component {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={this.handleClose} variant="contained" size="small">
               Cancel
             </Button>
-            <Button onClick={this.updateCustomer} color="primary">
+            <Button
+              onClick={this.updateCustomer}
+              variant="contained"
+              size="small"
+              color="primary"
+            >
               Edit Customer
             </Button>
           </DialogActions>
         </Dialog>
-        <Button onClick={this.handleClickOpen} color="primary">
+        <Button
+          onClick={this.handleClickOpen}
+          variant="contained"
+          size="small"
+          color="primary"
+        >
           EDIT
         </Button>
       </div>

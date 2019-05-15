@@ -126,7 +126,12 @@ class Customers extends Component {
         sortable: false,
         width: 100,
         Cell: value => (
-          <Button color="primary" onClick={() => this.deleteCustomer(value)}>
+          <Button
+            color="secondary"
+            variant="contained"
+            size="small"
+            onClick={() => this.deleteCustomer(value)}
+          >
             Delete
           </Button>
         )

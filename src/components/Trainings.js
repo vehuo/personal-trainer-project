@@ -51,7 +51,12 @@ class Trainings extends Component {
         width: 100,
         accessor: "id",
         Cell: ({ value }) => (
-          <Button color="primary" onClick={() => this.deleteTraining(value)}>
+          <Button
+            color="secondary"
+            variant="contained"
+            size="small"
+            onClick={() => this.deleteTraining(value)}
+          >
             Delete
           </Button>
         )
@@ -61,6 +66,7 @@ class Trainings extends Component {
     return (
       <div>
         <ReactTable
+          style={{ padding: 10 }}
           data={this.state.trainings}
           columns={columns}
           filterable={true}

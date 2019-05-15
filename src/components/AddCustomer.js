@@ -109,15 +109,26 @@ class AddCustomer extends Component {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={this.handleClose} variant="contained" size="small">
               Cancel
             </Button>
-            <Button onClick={this.addCustomer} color="primary">
+            <Button
+              onClick={this.addCustomer}
+              variant="contained"
+              size="small"
+              color="primary"
+            >
               Add Customer
             </Button>
           </DialogActions>
         </Dialog>
-        <Button onClick={this.handleClickOpen} color="primary">
+        <Button
+          onClick={this.handleClickOpen}
+          variant="contained"
+          size="small"
+          color="primary"
+          style={{ marginTop: 20, marginBottom: 10 }}
+        >
           ADD CUSTOMER
         </Button>
       </div>

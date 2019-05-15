@@ -1,12 +1,56 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Typography from "@material-ui/core/Typography";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import { NavLink } from "react-router-dom";
 
 const Navigator = () => {
   return (
     <div>
-      <Link to="/">Home</Link> <Link to="/calendar">Calendar</Link>{" "}
-      <Link to="/customers">Customers</Link>{" "}
-      <Link to="/trainings">Trainings</Link>{" "}
+      <AppBar position="static" color="default">
+        <Toolbar>
+          <Typography variant="h6" color="inherit">
+            Personal Trainer App{"  "}
+            <NavLink
+              variant="h6"
+              style={{
+                textDecoration: "none",
+                paddingLeft: 100,
+                color: "black"
+              }}
+              activeStyle={{ color: "blue", textDecoration: "none" }}
+              exact
+              to="/"
+            >
+              Customers
+            </NavLink>{" "}
+            <NavLink
+              variant="h6"
+              style={{
+                textDecoration: "none",
+                paddingLeft: 20,
+                color: "black"
+              }}
+              activeStyle={{ color: "blue", textDecoration: "none" }}
+              to="/trainings"
+            >
+              Trainings
+            </NavLink>{" "}
+            <NavLink
+              variant="h6"
+              style={{
+                textDecoration: "none",
+                paddingLeft: 20,
+                color: "black"
+              }}
+              activeStyle={{ color: "blue", textDecoration: "none" }}
+              to="/calendar"
+            >
+              Calendar
+            </NavLink>{" "}
+          </Typography>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 };
