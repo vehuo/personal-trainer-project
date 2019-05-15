@@ -27,7 +27,7 @@ class Trainings extends Component {
         method: "DELETE"
       })
         .then(res => this.setState({ open: true, message: "Training deleted" }))
-        .then(this.loadTrainings())
+        .then(res => this.loadTrainings())
         .catch(err => console.error(err));
     }
   };

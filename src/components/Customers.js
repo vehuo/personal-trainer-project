@@ -27,7 +27,7 @@ class Customers extends Component {
   deleteCustomer = customerLink => {
     if (window.confirm("Are you sure?")) {
       fetch(customerLink.original.links[0].href, { method: "DELETE" })
-        .then(this.loadCustomers())
+        .then(res => this.loadCustomers())
         .then(res => this.setState({ open: true, message: "Customer deleted" }))
         .catch(err => console.error(err));
     }
