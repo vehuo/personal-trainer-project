@@ -80,6 +80,8 @@ class Customers extends Component {
       {
         Header: "ID",
         accessor: "links[0].href",
+        filterable: false,
+        sortable: false,
         Cell: row => {
           return row.value.replace(/[\D]/g, "");
         }

@@ -63,7 +63,7 @@ class AddTraining extends Component {
               margin="dense"
               value={this.state.date}
               name="date"
-              label="Date"
+              label="Date and time"
               type="datetime-local"
               fullWidth
             />

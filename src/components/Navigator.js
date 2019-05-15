@@ -10,7 +10,7 @@ const Navigator = () => {
       <AppBar position="static" color="default">
         <Toolbar>
           <Typography variant="h6" color="inherit">
-            Personal Trainer App{"  "}
+            PERSONAL TRAINER APP{"  "}
             <NavLink
               variant="h6"
               style={{
